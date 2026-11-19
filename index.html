@@ -13,14 +13,15 @@
 </head>
 <body>
   <header class="site-header">
-    <a class="wordmark" href="#" aria-label="CEP Barbacena, início">
-      <span class="rose-mark" aria-hidden="true">✦</span>
-      <span><strong>CEP</strong><small>BARBACENA · MG</small></span>
+    <a class="brand-link" href="#" aria-label="CEP Barbacena, início">
+      <img src="assets/logosis03.png" alt="Sistemas de Informação UEMG Carangola" class="course-logo">
+      <span class="wordmark"><strong>CEP</strong><small>BARBACENA · MG</small></span>
     </a>
     <nav aria-label="Navegação principal">
       <a href="#consulta">Consulta</a>
       <a href="#como-funciona">Como funciona</a>
       <a href="#sobre">Sobre Barbacena</a>
+      <a href="#recomendacao">Barbacena</a>
     </nav>
   </header>
 
@@ -53,15 +54,22 @@
           <p class="form-message" id="address-message" role="status" aria-live="polite"></p>
         </form>
       </div>
-      <div class="hero-detail" aria-hidden="true">
-        <svg viewBox="0 0 180 220">
-          <path class="rose-stem" d="M92 210c-2-49-2-92 10-131"/>
-          <path class="rose-leaf" d="M96 167c-25-20-42-13-51-2 19 5 35 6 51 2zM99 181c25-19 42-13 51-2-19 5-35 6-51 2z"/>
-          <path class="rose" d="M100 77c-20-8-39 4-36 22 2 13 14 20 28 18-11 12-5 29 10 31 16 2 23-12 18-27 14 6 27-4 25-18-2-16-18-21-31-15 5-13 0-27-14-31z"/>
-          <path class="rose-line" d="M76 94c10-8 22-4 26 7 3-13 15-18 25-11M92 118c10-5 22-1 27 9"/>
-          <path class="rose-stem" d="M42 210h106"/>
-        </svg>
-        <span class="detail-note">BARBACENA<br><small>MINAS GERAIS</small></span>
+      <div class="hero-detail">
+        <a class="hero-image-link" href="https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_S%C3%A3o_Jos%C3%A9_Oper%C3%A1rio.jpg" target="_blank" rel="noopener noreferrer" aria-label="Abrir a foto licenciada da Basílica de São José Operário no Wikimedia Commons">
+          <img class="hero-city-image" src="assets/basilica-sao-jose.jpg" alt="Basílica de São José Operário em Barbacena">
+        </a>
+        <div class="hero-image-caption">
+          BASÍLICA DE SÃO JOSÉ OPERÁRIO<br>
+          <small><a href="https://commons.wikimedia.org/wiki/File:Bas%C3%ADlica_de_S%C3%A3o_Jos%C3%A9_Oper%C3%A1rio.jpg" target="_blank" rel="noopener noreferrer">Foto: ThiagoRuiz · CC BY-SA 3.0</a></small>
+        </div>
+        <div class="hero-flourish" aria-hidden="true">
+          <svg viewBox="0 0 180 220">
+            <path class="rose-stem" d="M92 210c-2-49-2-92 10-131"/>
+            <path class="rose-leaf" d="M96 167c-25-20-42-13-51-2 19 5 35 6 51 2zM99 181c25-19 42-13 51-2-19 5-35 6-51 2z"/>
+            <path class="rose" d="M100 77c-20-8-39 4-36 22 2 13 14 20 28 18-11 12-5 29 10 31 16 2 23-12 18-27 14 6 27-4 25-18-2-16-18-21-31-15 5-13 0-27-14-31z"/>
+            <path class="rose-line" d="M76 94c10-8 22-4 26 7 3-13 15-18 25-11M92 118c10-5 22-1 27 9"/>
+          </svg>
+        </div>
       </div>
     </section>
 
@@ -92,11 +100,78 @@
       <h2 id="about-title">Sobre Barbacena</h2>
       <p>Entre montanhas e jardins, Barbacena guarda o ritmo acolhedor das cidades mineiras. Conhecida como Cidade das Rosas, seus caminhos misturam tradição, cuidado e uma beleza que se revela devagar.</p>
     </section>
+
+    <section class="recommendation-section" id="recomendacao" aria-labelledby="recommendation-title">
+      <div class="recommendation-inner">
+        <div>
+          <p class="recommendation-kicker">RECOMENDAÇÃO</p>
+          <h2 id="recommendation-title">Descubra Barbacena além do endereço.</h2>
+          <p>Confira museus, praças e outros lugares especiais no guia oficial da cidade.</p>
+        </div>
+        <a class="recommendation-link" href="https://www.barbacena.mg.gov.br/visitebarbacena/pontosturisticos" target="_blank" rel="noopener noreferrer" aria-label="Conhecer os pontos turísticos de Barbacena no site da Prefeitura">
+          Explorar pontos turísticos <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <p><strong>CEP Barbacena</strong><br>Projeto acadêmico de Sistemas de Informação · UEMG</p>
-    <span>© 2026 · Feito para Barbacena, MG.</span>
+    <div class="footer-brand">
+      <img src="assets/logosis03.png" alt="Sistemas de Informação UEMG Carangola" class="footer-course-logo">
+      <a href="https://www.uemg.br/unidades/carangola" target="_blank" rel="noopener noreferrer" aria-label="UEMG Carangola, site oficial">
+        <img src="assets/logo_uemg.png" alt="UEMG Carangola" class="footer-uemg-logo">
+      </a>
+      <p><strong>CEP Barbacena</strong><br>Projeto acadêmico de Sistemas de Informação · UEMG</p>
+    </div>
+    <div class="footer-info">
+      <nav aria-label="Informações legais">
+        <button type="button" data-modal="sobre-modal">Sobre</button>
+        <button type="button" data-modal="termos-modal">Termos de Uso</button>
+        <button type="button" data-modal="privacidade-modal">Privacidade</button>
+      </nav>
+      <span>© 2026 · Feito para Barbacena, MG.</span>
+    </div>
   </footer>
+
+  <dialog class="site-modal" id="sobre-modal" aria-labelledby="sobre-modal-title">
+    <div class="modal-content">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar janela">×</button>
+      <p class="modal-kicker">SOBRE O PROJETO</p>
+      <h2 id="sobre-modal-title">Consulta de CEPs</h2>
+      <p>Esta landing page foi desenvolvida como atividade prática da disciplina de Programação 2 do curso de Bacharelado em Sistemas de Informação da Universidade do Estado de Minas Gerais (UEMG), Unidade Acadêmica de Carangola.</p>
+      <h3>Equipe de desenvolvimento</h3>
+      <p><strong>Emannuely Vanuzia da Silva Carlos</strong></p>
+      <p><strong>Carlos Henrique Souza Costa</strong></p>
+      <p><strong>Lavinya Sannliver Terra Soares</strong></p>
+      <h3>Nota de transparência sobre o uso de IA</h3>
+      <p>Ferramentas de Inteligência Artificial generativa foram utilizadas como apoio na revisão, depuração e validação da interface. A arquitetura, a lógica de negócio e a validação final são responsabilidade da equipe.</p>
+    </div>
+  </dialog>
+
+  <dialog class="site-modal" id="termos-modal" aria-labelledby="termos-modal-title">
+    <div class="modal-content">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar janela">×</button>
+      <p class="modal-kicker">INFORMAÇÕES LEGAIS</p>
+      <h2 id="termos-modal-title">Termos de Uso</h2>
+      <ol>
+        <li><strong>Finalidade acadêmica:</strong> esta aplicação possui finalidade exclusivamente didática e pedagógica.</li>
+        <li><strong>Natureza dos dados:</strong> os endereços e CEPs são provenientes da base pública ViaCEP e apresentados para fins informativos.</li>
+        <li><strong>Isenção de responsabilidade:</strong> os autores e a instituição não se responsabilizam por divergências cadastrais ou usos comerciais indevidos.</li>
+      </ol>
+    </div>
+  </dialog>
+
+  <dialog class="site-modal" id="privacidade-modal" aria-labelledby="privacidade-modal-title">
+    <div class="modal-content">
+      <button class="modal-close" type="button" data-close-modal aria-label="Fechar janela">×</button>
+      <p class="modal-kicker">INFORMAÇÕES LEGAIS</p>
+      <h2 id="privacidade-modal-title">Política de Privacidade</h2>
+      <ol>
+        <li><strong>Não coleta de dados pessoais:</strong> a página não solicita, armazena ou rastreia dados pessoais, cookies ou dados sensíveis.</li>
+         <li><strong>Execução local:</strong> o autocomplete filtra o arquivo JSON na memória do navegador. Consultas de CEP usam a API pública ViaCEP, sem telemetria ou rastreamento, e eventuais links externos (como Google Maps ou portais oficiais) são abertos apenas sob ação voluntária do usuário.</li>
+        <li><strong>Conformidade:</strong> a aplicação segue os princípios de minimização e transparência da LGPD (Lei Federal nº 13.709/2018).</li>
+      </ol>
+    </div>
+  </dialog>
 </body>
 </html>

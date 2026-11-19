@@ -90,6 +90,14 @@ function showResult(address) {
   const warning = address.localidade.toLowerCase() !== "barbacena" || address.uf !== "MG"
     ? `<p class="city-warning">Este CEP pertence a ${address.localidade} · ${address.uf}, não a Barbacena.</p>`
     : "";
+  const fullAddress = [
+    address.logradouro,
+    address.bairro,
+    address.localidade,
+    address.uf,
+    formatCep(address.cep)
+  ].filter(Boolean).join(", ");
+  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
   resultArea.innerHTML = `
     <article class="address-card">
       <div class="address-fields">
@@ -97,10 +105,15 @@ function showResult(address) {
         <div class="address-field"><small>Bairro</small><strong>${escapeHtml(address.bairro || "Não informado")}</strong></div>
         <div class="address-field"><small>Cidade</small><strong>${escapeHtml(address.localidade)}</strong></div>
         <div class="address-field"><small>UF</small><strong>${escapeHtml(address.uf)}</strong></div>
+        <div class="address-field cep-highlight"><small>CEP</small><strong>${escapeHtml(formatCep(address.cep))}</strong></div>
         ${warning}
       </div>
       <div class="card-stamp" aria-label="Localidade ${escapeHtml(address.localidade)}, ${escapeHtml(address.uf)}"><strong>${escapeHtml(address.uf)}</strong>${escapeHtml(address.localidade.toUpperCase())}<br>ENDEREÇO</div>
+      <a class="result-maps-link" href="${escapeHtml(mapsUrl)}" target="_blank" rel="noopener noreferrer">
+        Ver no Google Maps <span aria-hidden="true">↗</span>
+      </a>
     </article>`;
+  document.querySelector("#resultado").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
 async function fetchCep(cep) {
@@ -143,10 +156,10 @@ function showAddressResults(addresses) {
     button.addEventListener("click", () => {
       input.value = formatCep(button.dataset.cep);
       form.requestSubmit();
-      window.location.hash = "consulta";
     });
   });
   setAddressMessage("Busca concluída.", "success");
+  document.querySelector("#resultado").scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
 input.addEventListener("input", () => {
@@ -229,6 +242,20 @@ document.addEventListener("click", (event) => {
     addressSuggestions.classList.remove("is-visible");
     addressInput.setAttribute("aria-expanded", "false");
   }
+});
+
+document.querySelectorAll("[data-modal]").forEach((trigger) => {
+  trigger.addEventListener("click", () => {
+    const modal = document.getElementById(trigger.dataset.modal);
+    if (modal) modal.showModal();
+  });
+});
+
+document.querySelectorAll(".site-modal").forEach((modal) => {
+  modal.querySelector("[data-close-modal]").addEventListener("click", () => modal.close());
+  modal.addEventListener("click", (event) => {
+    if (event.target === modal) modal.close();
+  });
 });
 
 // Reveals the lower sections only as they enter the viewport.

@@ -9,7 +9,14 @@ Landing page canônica para consulta de endereços de Barbacena, MG, desenvolvid
 - Autocomplete a partir de 3 caracteres digitados.
 - Sugestões reais da base consolidada, com navegação por mouse, `↑`, `↓`, `Enter` e `Esc`.
 - Exibição de logradouro, bairro, cidade, UF e CEP.
+- CEP em destaque visual de alto contraste no resultado.
+- Link direto para visualizar o endereço completo no Google Maps.
+- Rolagem suave automática até a seção de resultados.
 - Aviso quando o CEP consultado pertence a outro município.
+- Hero com foto licenciada da Basílica de São José Operário em Barbacena, publicada por ThiagoRuiz no Wikimedia Commons sob CC BY-SA 3.0.
+- Logos do curso de Sistemas de Informação e da UEMG Carangola no header e footer.
+- Modais acessíveis de Sobre (com transparência de IA), Termos de Uso e Privacidade.
+- Recomendação turística sutil com link ao guia oficial de pontos turísticos de Barbacena.
 - Estados de validação, carregamento, erro e resultado não encontrado.
 - Interface responsiva, sem frameworks, com foco visível e suporte a `prefers-reduced-motion`.
 
@@ -30,10 +37,6 @@ python -m http.server 8000
 ```
 
 Depois, acesse `http://localhost:8000`.
-
-## Publicação
-
-O projeto é compatível com GitHub Pages e Vercel. No GitHub, habilite Pages usando a branch principal e a pasta raiz. Todos os recursos utilizam caminhos relativos para funcionar em ambos os ambientes.
 
 ## Consultas e dados
 
@@ -67,12 +70,13 @@ O autocomplete e a busca por bairro utilizam `data/ceps.json`, pois a rota de lo
 ├── data/
 │   └── ceps.json
 ├── assets/
+│   ├── basilica-sao-jose.jpg
+│   ├── logo_uemg.png
+│   └── logosis03.png
 └── scripts/
     └── atualizar-ceps.js
 ```
 
 O script `scripts/atualizar-ceps.js` refaz as consultas de Rua, Avenida e Praça e atualiza o arquivo consolidado local.
 
-## Hashtag da atividade
-
-`#sistemasuemgcarangola2p20262`
+#sistemasuemgcarangola2p20262
