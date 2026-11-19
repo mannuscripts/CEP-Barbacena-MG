@@ -80,3 +80,4 @@ O autocomplete e a busca por bairro utilizam `data/ceps.json`, pois a rota de lo
 O script `scripts/atualizar-ceps.js` refaz as consultas de Rua, Avenida e Praça e atualiza o arquivo consolidado local.
 
 #sistemasuemgcarangola2p20262
+
