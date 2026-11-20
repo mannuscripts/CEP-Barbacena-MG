@@ -78,8 +78,8 @@ function selectSuggestion(record) {
   addressInput.value = record.logradouro;
   addressSuggestions.classList.remove("is-visible");
   addressInput.setAttribute("aria-expanded", "false");
-  setAddressMessage("");
-  addressForm.requestSubmit();
+  setAddressMessage("Endereço selecionado.", "success");
+  showResult(record);
 }
 
 function showLoading() {
@@ -146,7 +146,7 @@ function showAddressResults(addresses) {
     setAddressMessage("Não encontramos esse logradouro em Barbacena.", "error");
     return;
   }
-  resultArea.innerHTML = `<div class="address-results"><p class="result-count">${addresses.length} endereço(s) encontrado(s) pela ViaCEP.</p>${addresses.slice(0, 10).map((address) => `
+  resultArea.innerHTML = `<div class="address-results"><p class="result-count">${addresses.length} endereço(s) encontrado(s).</p>${addresses.slice(0, 10).map((address) => `
     <article class="address-option">
       <strong>${escapeHtml(address.logradouro || "Logradouro não informado")}</strong>
       <span>${escapeHtml(address.bairro || "Bairro não informado")} · ${escapeHtml(address.localidade)} · ${escapeHtml(address.uf)} · ${formatCep(address.cep)}</span>
